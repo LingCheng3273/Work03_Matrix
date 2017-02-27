@@ -4,8 +4,7 @@ from matrix import *
 
 def draw_lines( matrix, screen, color ):
     for col in range(len(matrix)/2):
-        draw_line(matrix[col*2][0], matrix[col*2][1], matrix[col*2+1][0], matrix[col*2+1][1], screen, color)
-            
+        draw_line(matrix[col*2][0], matrix[col*2][1], matrix[col*2+1][0], matrix[col*2+1][1], screen, color)    
 
 def add_edge( matrix, x0, y0, z0, x1, y1, z1 ):
     add_point(matrix, x0, y0, z0)

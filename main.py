@@ -3,37 +3,56 @@ from draw import *
 
 screen = new_screen()
 color = [ 0, 255, 0 ]
-matrix = new_matrix(4, 2)
-matrix2= new_matrix(4,1)
-matrix3= new_matrix(4,4)
+matrix = new_matrix(4, 0)
+matrix2 = new_matrix(4, 4)
 
-##print("Here is your original matrix:")
-##print_matrix(matrix)
-##add_edge(matrix, 0, 0, 0, 500, 500, 500)
-###draw_lines(matrix, screen, color)
-##print("Here is your new matrix")
-##print_matrix(matrix)
-##
-##print("This the the multiplicative identity of your matrix")
-##print_matrix(ident(matrix))
-##
-##print("Here is your matrix after *2")
-##scalar_mult(matrix, 2)
-##print_matrix(matrix)
+print "This is a new empty matrix:"
+print_matrix(matrix)
 
-print("This is a new matrix")
-print_matrix(matrix2)
+add_edge(matrix, 100, 100, 1, 100, 300, 1)
+add_edge(matrix, 100, 300, 1, 300, 300, 1)
+add_edge(matrix, 300, 300, 1, 300, 100, 1)
+add_edge(matrix, 300, 100, 1, 100, 100, 1)
 
-print("Here is your matrix after adding edges")
-add_edge(matrix2, 0, 0, 0, 5, 5, 5)
-print_matrix(matrix2)
+add_edge(matrix, 200, 200, 1, 100, 100, 1)
+add_edge(matrix, 200, 400, 1, 100, 300, 1)
+add_edge(matrix, 400, 400, 1, 300, 300, 1)
+add_edge(matrix, 400, 200, 1, 300, 100, 1)
 
-print("Here is your matrix after *2")
-scalar_mult(matrix2, 2)
-print_matrix(matrix2)
+add_edge(matrix, 200, 200, 1, 200, 400, 1)
+add_edge(matrix, 200, 400, 1, 400, 400, 1)
+add_edge(matrix, 400, 400, 1, 400, 200, 1)
+add_edge(matrix, 400, 200, 1, 200, 200, 1)
+print "added 4 edges:"
+print_matrix(matrix)
 
-print("Here is your matrix after matrix mult")
-matrix_mult(matrix3, matrix2)
-print_matrix(matrix2)
+#draw_lines(matrix, screen, color)
 
-#display(screen)
+scalar_mult(matrix, 0.25)
+print "scaled matrix by half"
+print_matrix(matrix)
+
+#draw_lines(matrix, screen, color)
+
+print "this is the identity matrix:"
+print_matrix(ident(matrix))
+
+print "identity matrix * matrix:"
+matrix_mult(ident(matrix), matrix)
+print_matrix(matrix)
+
+matrix_test1= [[1, 1, 1, 1],[1, 1, 1, 1],[1, 1, 1, 1],[1, 1, 1, 1]]
+matrix4= matrix[:]
+matrix_mult(matrix_test1, matrix4)
+
+draw_lines(matrix, screen, color)
+print_matrix(matrix)
+
+
+
+
+print "empty 4x4 matrix * matrix:"
+matrix_mult(matrix2, matrix)
+print_matrix(matrix)
+
+display(screen)
