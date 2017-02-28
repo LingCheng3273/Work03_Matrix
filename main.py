@@ -23,36 +23,33 @@ add_edge(matrix, 200, 200, 1, 200, 400, 1)
 add_edge(matrix, 200, 400, 1, 400, 400, 1)
 add_edge(matrix, 400, 400, 1, 400, 200, 1)
 add_edge(matrix, 400, 200, 1, 200, 200, 1)
-print "added 4 edges:"
+print "added 12 edges"
 print_matrix(matrix)
 
-#draw_lines(matrix, screen, color)
+draw_lines(matrix, screen, color)
 
 scalar_mult(matrix, 0.25)
-print "scaled matrix by half"
+print "scaled matrix by 1/4"
 print_matrix(matrix)
 
-#draw_lines(matrix, screen, color)
+draw_lines(matrix, screen, color)
 
 print "this is the identity matrix:"
 print_matrix(ident(matrix))
 
 print "identity matrix * matrix:"
-matrix_mult(ident(matrix), matrix)
+identity= ident(matrix)
+matrix_mult(identity, matrix)
 print_matrix(matrix)
 
-matrix_test1= [[1, 1, 1, 1],[1, 1, 1, 1],[1, 1, 1, 1],[1, 1, 1, 1]]
-matrix4= matrix[:]
-matrix_mult(matrix_test1, matrix4)
+print "identity matrix * 3:"
+scalar_mult(identity, 3)
+print_matrix(identity)
+
+print "(identity matrix * 3) * matrix:"
+matrix_mult(identity, matrix)
+print_matrix(matrix)
 
 draw_lines(matrix, screen, color)
-print_matrix(matrix)
-
-
-
-
-print "empty 4x4 matrix * matrix:"
-matrix_mult(matrix2, matrix)
-print_matrix(matrix)
 
 display(screen)

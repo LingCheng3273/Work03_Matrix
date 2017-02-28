@@ -2,13 +2,13 @@ import math
 
 
 def print_matrix( matrix ):
-    pr="[["
+    pr=""
     if (len(matrix) >0):
         for row in range(len(matrix[0])):
             for col in range(len(matrix)):
-                pr= pr + str(matrix[col][row]) + ", "
-            pr = pr[0: len(pr)-2] + "]\n["
-        print pr[0: len(pr)-2]+"]"
+                pr= pr + str(matrix[col][row]) + " "
+            pr = pr + "\n"
+        print pr
     else:
         print "[]"
 
