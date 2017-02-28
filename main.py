@@ -4,7 +4,6 @@ from draw import *
 screen = new_screen()
 color = [ 0, 255, 0 ]
 matrix = new_matrix(4, 0)
-matrix2 = new_matrix(4, 4)
 
 print "This is a new empty matrix:"
 print_matrix(matrix)
@@ -46,7 +45,7 @@ print "identity matrix * 3:"
 scalar_mult(identity, 3)
 print_matrix(identity)
 
-print "(identity matrix * 3) * matrix:"
+print "(new identity matrix) * matrix:"
 matrix_mult(identity, matrix)
 print_matrix(matrix)
 
